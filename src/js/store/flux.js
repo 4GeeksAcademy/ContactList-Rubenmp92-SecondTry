@@ -1,3 +1,5 @@
+import updateInfo from "../component/UpdateInfo";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -12,7 +14,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+
+			info: "Info desde el store"
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,6 +41,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			actualizar: () => {
+				console.log("Acción updateInfo ejecutada")
+				setStore({ info: "info actualizada en el store" })
 			}
 		}
 	};
